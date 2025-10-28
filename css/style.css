@@ -6,7 +6,7 @@
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
-@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+
 *,
 ::before,
 ::after {
@@ -23,10 +23,6 @@
 ::before,
 ::after {
   --tw-content: '';
-}
-
-.logo {
-  font-family: "Aladin", system-ui;
 }
 
 /*
@@ -675,10 +671,6 @@ video {
   height: 15rem;
 }
 
-.h-\[3px\] {
-  height: 3px;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -697,6 +689,14 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-\[90px\] {
+  width: 90px;
 }
 
 .origin-\[0\] {
@@ -747,10 +747,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
 }
 
 .items-center {
@@ -811,6 +807,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded {
@@ -938,16 +938,6 @@ video {
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
@@ -971,13 +961,13 @@ video {
 }
 
 .from-\[\#FA5252\] {
-  --tw-gradient-from: #59AC77;
+  --tw-gradient-from: #FA5252;
   --tw-gradient-to: rgb(250 82 82 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .to-\[\#DD2476\] {
-  --tw-gradient-to: #59AC77;
+  --tw-gradient-to: #DD2476;
 }
 
 .bg-cover {
@@ -1021,11 +1011,6 @@ video {
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .px-4 {
@@ -1103,10 +1088,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.pb-1 {
-  padding-bottom: 0.25rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1119,10 +1100,6 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.pb-8 {
-  padding-bottom: 2rem;
-}
-
 .pl-5 {
   padding-left: 1.25rem;
 }
@@ -1133,10 +1110,6 @@ video {
 
 .pt-16 {
   padding-top: 4rem;
-}
-
-.pt-4 {
-  padding-top: 1rem;
 }
 
 .pt-6 {
@@ -1157,10 +1130,6 @@ video {
 
 .font-roboto-slab {
   font-family: Roboto Slab, sans-serif;
-}
-
-.font-\[\] {
-  font-family: ;
 }
 
 .text-2xl {
@@ -1203,10 +1172,6 @@ video {
   line-height: 1rem;
 }
 
-.text-\[60px\] {
-  font-size: 60px;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1225,10 +1190,6 @@ video {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.font-\[60px\] {
-  font-weight: 60px;
 }
 
 .leading-7 {
@@ -1287,11 +1248,6 @@ video {
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-
-.text-lime-500 {
-  --tw-text-opacity: 1;
-  color: rgb(132 204 22 / var(--tw-text-opacity));
 }
 
 .text-pink-600 {
@@ -1371,10 +1327,10 @@ video {
 
 .active {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #59AC77;
+  --tw-gradient-from: #FA5252;
   --tw-gradient-to: rgb(250 82 82 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #3A6F43;
+  --tw-gradient-to: #DD2476;
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity));
 }
@@ -1382,11 +1338,6 @@ video {
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
-}
-
-.after\:left-0::after {
-  content: var(--tw-content);
-  left: 0px;
 }
 
 .after\:left-52::after {
@@ -1397,11 +1348,6 @@ video {
 .after\:right-8::after {
   content: var(--tw-content);
   right: 2rem;
-}
-
-.after\:top-0::after {
-  content: var(--tw-content);
-  top: 0px;
 }
 
 .after\:top-1\/2::after {
@@ -1419,69 +1365,15 @@ video {
   height: 2px;
 }
 
-.after\:h-full::after {
-  content: var(--tw-content);
-  height: 100%;
-}
-
 .after\:w-36::after {
   content: var(--tw-content);
   width: 9rem;
-}
-
-.after\:w-\[66\%\]::after {
-  content: var(--tw-content);
-  width: 66%;
-}
-
-.after\:w-\[75\%\]::after {
-  content: var(--tw-content);
-  width: 75%;
-}
-
-.after\:w-\[80\%\]::after {
-  content: var(--tw-content);
-  width: 80%;
-}
-
-.after\:w-\[95\%\]::after {
-  content: var(--tw-content);
-  width: 95%;
-}
-
-.after\:rounded::after {
-  content: var(--tw-content);
-  border-radius: 0.25rem;
-}
-
-.after\:bg-cyan-500::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
 }
 
 .after\:bg-primary::after {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(250 82 82 / var(--tw-bg-opacity));
-}
-
-.after\:bg-purple-400::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
-}
-
-.after\:bg-red-400::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
-.after\:bg-yellow-400::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
 .autofill\:bg-transparent:-webkit-autofill {
@@ -1542,12 +1434,10 @@ video {
 
 .hover\:hover_active:hover {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #59AC77;
+  --tw-gradient-from: #FA5252;
   --tw-gradient-to: rgb(250 82 82 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #3A6F43;
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity));
+  --tw-gradient-to: #DD2476;
 }
 
 .focus\:border-\[\#5185D4\]:focus {
@@ -1692,11 +1582,6 @@ video {
   background-color: rgb(29 29 29 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-slate-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-}
-
 .dark .dark\:bg-image-dark {
   background-image: url('/images/bg-image.jpg');
 }
@@ -1718,11 +1603,6 @@ video {
 .dark .dark\:text-slate-200 {
   --tw-text-opacity: 1;
   color: rgb(226 232 240 / var(--tw-text-opacity));
-}
-
-.dark .dark\:text-slate-300 {
-  --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity));
 }
 
 .dark .dark\:text-slate-50 {
@@ -1762,6 +1642,10 @@ video {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .md\:text-\[60px\] {
+    font-size: 60px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1800,10 +1684,6 @@ video {
   .lg\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
-  }
-
-  .lg\:pt-12 {
-    padding-top: 3rem;
   }
 
   .lg\:pt-20 {
