@@ -3,12 +3,23 @@
 @tailwind utilities;
 
 @layer utilities {
- .hover_active{
-  @apply bg-gradient-to-r from-[#FA5252] to-[#DD2476]
- }
+	.hover_active {
+		@apply bg-gradient-to-r from-[#FA5252] to-[#DD2476];
+	}
 }
 @layer utilities {
- .active{
-  @apply bg-gradient-to-r from-[#FA5252] to-[#DD2476] text-slate-50
- }
+	.active {
+		@apply bg-gradient-to-r from-[#FA5252] to-[#DD2476] text-slate-50;
+	}
+}
+.slide_item {
+	width: 160px;
+	height: 130px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f9f9f9;
+}
+.slide_item img {
+	width: 100%;
 }
