@@ -12,7 +12,7 @@
 		@apply bg-gradient-to-r from-zinc-500 to-[#3D515C] text-slate-50;
 	}
 	.section_title {
-		@apply text-4xl text-slate-900  dark:text-slate-50 inline-block font-roboto-slab font-bold relative  after:w-36 after:h-[2px] after:bg-primary after:z-10 after:absolute after:top-1/2 -translate-y-1/2  after:left-[calc(100%_+_30px)];
+		@apply text-4xl text-slate-900  dark:text-slate-50 inline-block font-roboto-slab font-bold relative  after:w-36 after:h-[2px] after:bg-primary after:z-10 after:absolute after:top-[112%] lg:after:top-1/2 -translate-y-1/2 after:left-0  lg:after:left-[calc(100%_+_30px)];
 	}
 }
 
@@ -86,6 +86,7 @@
 	color: white;
 	cursor: pointer;
 	transition: color 0.3s;
+	z-index: 1001;
 }
 .close-btn:hover {
 	color: #ef4444;
@@ -95,4 +96,52 @@
 }
 .theme-toggle:hover {
 	transform: scale(1.1);
+}
+
+.nav-btn {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	padding: 15px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: background-color 0.3s;
+	z-index: 1001;
+}
+
+.nav-btn:hover {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.nav-btn-left {
+	left: 20px;
+}
+
+.nav-btn-right {
+	right: 20px;
+}
+
+.gallery-item {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+	transform: scale(1.05);
+}
+
+.light .gallery-item:hover {
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dark .gallery-item:hover {
+	box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
 }
