@@ -176,4 +176,119 @@ $(function () {
 			},
 		],
 	});
+
+	// Student Success Gallery
+	const studentImages = [
+		'05 sultan .jpg', 'ADEXEL 02.jpg', 'ADEXEL 03.jpg', 'aDEXEL.jpg', 'FAREWELL.jpg',
+		'success (1).jpg', 'success (2).jpg', 'success (3).jpg', 'success (4).jpg', 'success (5).jpg',
+		'success (6).jpg', 'success (7).jpg', 'success (8).jpg', 'success (9).jpg', 'success (10).jpg',
+		'success (11).jpg', 'success (12).jpg', 'success (13).jpg', 'success (14).jpg', 'success (15).jpg',
+		'success (16).jpg', 'success (17).jpg', 'success (18).jpg', 'success (19).jpg', 'success (20).jpg',
+		'success (21).jpg', 'success (22).jpg', 'success (23).jpg', 'success (24).jpg', 'success (25).jpg',
+		'success (26).jpg', 'success (27).jpg', 'success (28).jpg', 'success (29).jpg', 'success (30).jpg',
+		'success (31).jpg', 'success (32).jpg', 'success (33).jpg', 'success (34).jpg', 'success (35).jpg',
+		'success (36).jpg', 'success (37).jpg', 'success (38).jpg', 'success (39).jpg', 'Sultan 01.jpg',
+		'sultan 02.jpg', 'sultan 03 .jpg', 'sultan 04.jpg'
+	];
+
+	const imagesPerPage = 6;
+	let currentPage = 1;
+	let currentImageIndex = 0;
+
+	const galleryContainer = document.getElementById('student-gallery');
+	const prevPageBtn = document.getElementById('prev-page');
+	const nextPageBtn = document.getElementById('next-page');
+	const pageInfo = document.getElementById('page-info');
+	const prevImageBtn = document.getElementById('prev-image');
+	const nextImageBtn = document.getElementById('next-image');
+
+	function renderGallery(page) {
+		const startIndex = (page - 1) * imagesPerPage;
+		const endIndex = startIndex + imagesPerPage;
+		const imagesToShow = studentImages.slice(startIndex, endIndex);
+
+		galleryContainer.innerHTML = '';
+
+		imagesToShow.forEach((image, index) => {
+			const imageCard = document.createElement('div');
+			imageCard.className = 'gallery-item bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:transform hover:scale-105';
+			imageCard.onclick = () => openGalleryModal(startIndex + index);
+
+			imageCard.innerHTML = `
+				<img src="./images/student-success/${image}" alt="Student Success ${startIndex + index + 1}"
+					 class="w-full h-48 object-cover">
+			`;
+
+			galleryContainer.appendChild(imageCard);
+		});
+
+		updatePaginationButtons();
+	}
+
+	function updatePaginationButtons() {
+		const totalPages = Math.ceil(studentImages.length / imagesPerPage);
+		prevPageBtn.disabled = currentPage === 1;
+		nextPageBtn.disabled = currentPage === totalPages;
+		pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+	}
+
+	function openGalleryModal(index) {
+		currentImageIndex = index;
+		const modal = document.getElementById("imageModal");
+		const modalImg = document.getElementById("modalImage");
+		modal.classList.add("active");
+		modalImg.src = `./images/student-success/${studentImages[currentImageIndex]}`;
+		document.body.style.overflow = "hidden";
+	}
+
+	function navigateImage(direction) {
+		currentImageIndex += direction;
+		if (currentImageIndex < 0) currentImageIndex = studentImages.length - 1;
+		if (currentImageIndex >= studentImages.length) currentImageIndex = 0;
+
+		const modalImg = document.getElementById("modalImage");
+		modalImg.src = `./images/student-success/${studentImages[currentImageIndex]}`;
+	}
+
+	// Event listeners
+	prevPageBtn.addEventListener('click', () => {
+		if (currentPage > 1) {
+			currentPage--;
+			renderGallery(currentPage);
+		}
+	});
+
+	nextPageBtn.addEventListener('click', () => {
+		const totalPages = Math.ceil(studentImages.length / imagesPerPage);
+		if (currentPage < totalPages) {
+			currentPage++;
+			renderGallery(currentPage);
+		}
+	});
+
+	prevImageBtn.addEventListener('click', (e) => {
+		e.stopPropagation();
+		navigateImage(-1);
+	});
+
+	nextImageBtn.addEventListener('click', (e) => {
+		e.stopPropagation();
+		navigateImage(1);
+	});
+
+	// Keyboard navigation
+	document.addEventListener('keydown', (e) => {
+		if (document.getElementById('imageModal').classList.contains('active')) {
+			if (e.key === 'ArrowLeft') {
+				navigateImage(-1);
+			} else if (e.key === 'ArrowRight') {
+				navigateImage(1);
+			} else if (e.key === 'Escape') {
+				closeModal();
+			}
+		}
+	});
+
+	// Initialize gallery
+	renderGallery(currentPage);
 });
