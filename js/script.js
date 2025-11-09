@@ -30,6 +30,8 @@ $(function () {
 	// Menu start
 	const menu = document.querySelectorAll(".menu li a");
 	const menuArr = Array.from(menu);
+	console.log(menuArr.length);
+
 	const tab_itemArray = Array.from(document.querySelectorAll(".tab_item"));
 	const sideMenusArray = Array.from(
 		document.querySelectorAll(".side_menu ul li a")
@@ -175,5 +177,3 @@ $(function () {
 		],
 	});
 });
-
-
